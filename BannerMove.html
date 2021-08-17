@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bannerStyle.css">
+    <script src="./BannerMove.js"></script>
+</head>
+<body>
+    <div class="show">
+        <div class="picture">
+            <div><a href="">1</a></div>
+            <div><a href="">2</a></div>
+            <div><a href="">3</a></div>
+            <div><a href="">1</a></div>
+        </div>
+    </div>
+    <script>
+        const bannerTu = document.querySelector('.picture');
+        let count = 0;
+        setInterval(function(){
+            if(count == 3){
+                bannerTu.style['transform'] = 'translate(0px)';
+                count = 0;
+                console.log(getStyle(bannerTu,'transform'));
+            }
+            count ++;
+            startMove(bannerTu,{'transform':(-600 * count)});
+        },5000);
+    </script>
+</body>
+</html>
